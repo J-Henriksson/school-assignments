@@ -1,0 +1,42 @@
+Room;Bunker Entrance;1;1;You stand at the heavy blast door, the last barrier between safety and the desolate world above. Flickering emergency lights reveal a dim corridor leading deeper into the underground refuge.
+Room;Living Quarters;2;1;Bunk beds line the walls, abandoned belongings scattered. A sense of abandonment fills the air as you pass by the remnants of a once-thriving community.
+Room;Mess Hall;3;1;Tables and chairs are overturned, and dried-out ration packs litter the floor. The smell of stale air mingles with the faint remnants of a meal long forgotten.
+Room;Medical Bay;1;2;Broken glass from shattered cabinets crunches underfoot. Faded medical posters depict procedures for illnesses that never had a cure. A lone gurney stands in the center, covered in a layer of dust
+Room;Generator Room;2;2;The low hum of a malfunctioning generator reverberates. Dark corners hide tangled wires and flickering lights, creating an ominous atmosphere.
+Room;Storage Room;3;2;Empty shelves and discarded containers reveal that this room once housed vital supplies. The stark reality of dwindling resources becomes evident.
+Room;Command Bay;1;3;Abandoned consoles flicker sporadically, displaying outdated emergency messages. Dust-covered maps and communication equipment hint at attempts to maintain order during the chaos.
+Room;Armory;2;3;Dust-covered firearms, melee weapons, and rusting ammunition crates are scattered throughout. The metallic scent of cold steel lingers in the air, and the faint echo of past footsteps resonates within the confined space.
+Room;Escape Hatch;3;3;Entering the escape room, a sense of urgency grips you. The hatch above beckons, promising respite from the mutant's relentless pursuit. Time is of the essence.
+
+Exit;Bunker Entrance;east;Living Quarters
+Exit;Bunker Entrance;north;Medical Bay
+
+Exit;Living Quarters;west;Bunker Entrance
+Exit;Living Quarters;east;Mess Hall
+Exit;Living Quarters;north;Generator Room
+
+Exit;Mess Hall;west;Living Quarters
+Exit;Mess Hall;north;Storage Room
+
+Exit;Medical Bay;south;Bunker Entrance
+Exit;Medical Bay;north;Command Bay
+Exit;Medical Bay;east;Generator Room
+
+Exit;Generator Room;south;Living Quarters
+Exit;Generator Room;west;Medical Bay
+Exit;Generator Room;east;Storage Room
+Exit;Generator Room;north;Armory
+
+Exit;Storage Room;south;Mess Hall
+Exit;Storage Room;west;Generator Room
+Exit;Storage Room;north;Escape Hatch
+
+Exit;Command Bay;south;Medical Bay
+Exit;Command Bay;east;Armory
+
+Exit;Armory;south;Generator Room
+Exit;Armory;west;Command Bay
+Exit;Armory;east;Escape Hatch
+
+Exit;Escape Hatch;south;Storage Room
+Exit;Escape Hatch;west;Armory

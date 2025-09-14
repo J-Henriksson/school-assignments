@@ -1,0 +1,154 @@
+\documentclass{article}
+
+\usepackage{fullpage}
+
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+
+% Make math better
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% Cross referencing and hyperreferencing
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+% Kill indentations in paragraphs
+\setlength\parindent{0pt}
+
+\title{DD1338 task 13}
+\author{Joel Henriksson}
+\date{}
+
+\begin{document}
+
+\maketitle
+\section{Exercise 13.2 - Induction Warmup}
+\textbf{Prove by induction} that the following statement is true for all positive integers.
+
+\begin{align}
+    \label{statement1}
+    \sum_{j=1}^{n}(2j-1) = n^2
+\end{align}
+
+\begin{proof}
+
+\textit{\\\\Base step} -- Show that \cref{statement1} holds for the base case, when n = 1
+
+\begin{align}
+    \label{basestep}
+    LHS(1) = \sum_{j=1}^{1}(2j-1) = 2-1 = 1 = 1^2 = RHS(1)
+\end{align}
+
+\textit{Inductive step} -- First, assume that statement is true for all $p$.
+
+\begin{align}
+    \label{assumption}
+    \sum_{j=1}^{P}(2j-1) = P^2
+\end{align}
+
+Second, prove that the statement also holds true for $p+1$.
+
+\begin{align}
+    \label{proof}
+    LHS(P+1) = \sum_{j=1}^{P+1}(2j-1) &= \sum_{j=1}^{P}(2j-1) + 2(P+1)-1\notag\\
+    &\hspace{-3cm} \text{(Insertion of the inductive hypothesis yields)}\notag\\
+    \sum_{j=1}^{P}(2j-1) + 2(P+1)-1 &= p^2 + 2p + 2 -1\notag\\
+    p^2 + 2p + 2 -1 &= p^2 + 2p + 1 = RHS(P+1)
+\end{align}
+
+\textit{Conclusion} We have proven by induction that the statement in~\cref{statement1} is indeed true.
+
+\end{proof}
+
+\textbf{Prove by induction} that the following statement is true for all positive integers.
+
+\begin{align}
+    \label{statement2}
+    \sum_{i=1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6}
+\end{align}
+
+\begin{proof}
+
+\textit{\\\\Base step} -- Show that \cref{statement2} holds for the base case, when n = 1
+
+\begin{align}
+    \label{basestep}
+    LHS(1) = \sum_{i=1}^{1}(i^2) = 1^2 = RHS(1)
+\end{align}
+
+\textit{Inductive step} -- First, assume that statement is true for all $p$.
+
+\begin{align}
+    \label{assumption}
+    \sum_{i=1}^{p} (i^2) = \frac{p(p+1)(2p+1)}{6} 
+\end{align}
+
+Second, prove that the statement also holds true for $p+1$.
+
+\begin{align}
+    \label{proof}
+    LHS(P+1) = \sum_{i=1}^{p+1} (i^2) &= \sum_{i=1}^{p+1} (i^2) + (p+1)^2\notag\\
+    &\hspace{-3cm} \text{Insertion of the inductive hypothesis yields}\notag\\
+    \sum_{i=1}^{p+1} (i^2) + (p+1)^2 &= \frac{p(p+1)(2p+1)}{6} + (p+1)^2\notag\\
+    \frac{p(p+1)(2p+1)}{6} + (p+1)^2 &= \frac{p(p+1)(2p+1) + 6(p+1)^2}{6}\notag\\
+    \frac{p(p+1)(2p+1) + 6(p+1)^2}{6} &= \frac{(p+1)(p(2p+1) + 6(p+1))}{6}\notag\\
+    \frac{(p+1)(p(2p+1) + 6(p+1))}{6} &= \frac{(p+1)(2p^2 + 7p + 6)}{6}\notag\\
+    \frac{(p+1)(2p^2 + 7p + 6)}{6} &= \frac{(p+1)(p+2)(2p+3)}{6} = RHS(P+1)
+\end{align}
+
+\textit{Conclusion} -- And we are done! We have proven by induction that the statement in~\cref{statement2} is indeed true.
+
+\end{proof}
+
+\section{Exercise 13.3.3}
+
+\textbf{Prove by induction} that the following statement is true for all positive integers.
+
+\begin{align}
+    \label{statement3}
+    a_n = a_{\lfloor n/2 \rfloor} &\cdot a_{\lfloor (n+1)/2 \rfloor} = x^n\notag\\
+    &\hspace{-1cm} \text{Given that}\notag\\
+    a_0=x^1, a_1=x^1, &a_2=x^2, a_3=x^3, a_4=x^4
+\end{align}
+
+\begin{proof}
+
+\textit{\\\\Base step} -- Show that \cref{statement3} holds for the base case, when n = 5 and 6  
+
+\begin{align}
+    \label{basestep}
+    LHS(5) &= a_{\lfloor 5/2 \rfloor} \cdot a_{\lfloor 6/2 \rfloor}\notag\\
+    a_{\lfloor 5/2 \rfloor} \cdot a_{\lfloor 6/2 \rfloor} &= a_2 \cdot a_3\notag\\
+    a_2 \cdot a_3 &= x^2 \cdot x^3 = x^5 = RHS(5)\notag\\
+    LHS(6) &= a_{\lfloor 6/2 \rfloor} \cdot a_{\lfloor 7/2 \rfloor}\notag\\
+    a_{\lfloor 6/2 \rfloor} \cdot a_{\lfloor 7/2 \rfloor} &= a_3 \cdot a_3\notag\\
+    a_2 \cdot a_3 &= x^3 \cdot x^3 = x^5 = RHS(6)
+\end{align}
+
+\textit{Inductive step} -- First, assume that statement is true for all whole numbers \( n \) such that \( 0 \leq n \leq p \).
+
+\begin{align}
+    \label{assumption}
+    a_n = a_{\lfloor n/2 \rfloor} &\cdot a_{\lfloor n/2 \rfloor} = x^n\notag\\
+    &\hspace{-3cm} \text{for all whole numbers \( n \) such that \( 0 \leq n \leq p \)}
+\end{align}
+
+Second, prove that the statement also holds true for $p+1$.
+
+\begin{align}
+    \label{proof}
+    LHS(P+1) &= a_{\lfloor (p+1)/2 \rfloor} \cdot a_{\lfloor (p+2)/2 \rfloor}\notag\\
+     &\hspace{-3cm} \text{Insertion of the inductive hypothesis yields}\notag\\
+     a_{\lfloor (p+1)/2 \rfloor} \cdot a_{\lfloor (p+2)/2 \rfloor} &= x^{\lfloor (p+1)/2 \rfloor} \cdot x^{\lfloor (p+2)/2 \rfloor}\notag\\
+     x^{\lfloor (p+1)/2 \rfloor} \cdot x^{\lfloor (p+2)/2 \rfloor} &= x^{\lfloor p/2 \rfloor} \cdot x^{\lfloor p/2 \rfloor} \cdot x^{\lfloor 1/2 \rfloor} \cdot x^{\lfloor 2/2 \rfloor}\notag\\
+     x^{\lfloor p/2 \rfloor} \cdot x^{\lfloor p/2 \rfloor} \cdot x^{\lfloor 1/2 \rfloor} \cdot x^{\lfloor 2/2 \rfloor} &= x^{p} \cdot x^0 \cdot x^1\notag\\
+     x^{p} \cdot x^0 \cdot x^1 &= x^{p+1} = RHS(p+1)
+\end{align}
+
+\textit{Conclusion} We have proven by strong induction that the statement in~\cref{statement3} is indeed true.
+
+\end{proof}
+
+\end{document}

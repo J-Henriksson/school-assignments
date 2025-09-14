@@ -1,0 +1,79 @@
+\documentclass{article}
+
+\usepackage{fullpage}
+
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+
+% Make math better
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% Cross referencing and hyperreferencing
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+% Kill indentations in paragraphs
+\setlength\parindent{0pt}
+
+\title{Template for \LaTeX proof}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\textbf{Prove by induction} that the following statement is true for all positive integers.
+
+\begin{align}
+    \label{statement}
+    \sum_{i=1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6}
+\end{align}
+
+\begin{proof}
+
+\textit{\\\\Base step} -- Show that \cref{statement} holds for the base case, when \dots.
+
+\begin{align}
+    \label{basestep}
+    \dots
+\end{align}
+
+\textit{Inductive step} -- First, assume that statement is true for all $p$.
+
+\begin{align}
+    \label{assumption}
+    \dots
+\end{align}
+
+Second, prove that the statement also holds true for $p+1$.
+
+\begin{align}
+    \label{proof}
+    \dots
+\end{align}
+
+\textit{Conclusion} -- And we are done! We have proven by induction that the statement in~\cref{statement} is indeed true.
+
+\end{proof}
+
+\textbf{Tips on writing math in align mode}
+\begin{itemize}
+    \item Multiple statements can be included in one align environment. Force a new line with \textbackslash\textbackslash
+    \item Every statement will get an index like (1). Use the \texttt{\textbackslash notag} command to suppress this when not needed
+    \item Multiple statements can be aligned neatly using the \texttt{\&} character as an anchor point. Normally you want to place this beside the \texttt{=} symbol of each statement as follows: \texttt{\&=}
+    \item If you need a particular symbol then refer to the \href{http://tug.ctan.org/info/undergradmath/undergradmath.pdf}{cheat sheet}.
+\end{itemize}
+
+For example, if $x=6$, what is $y$?
+\begin{align}
+    x + 3y &= 9 \notag\\
+    (6) + 3y &= 9 \notag\\
+    3y &= 9 - 6 \notag\\
+    y &= \frac{9 - 6}{3} \notag\\
+    y &= \frac{3}{3} \notag\\
+    y &= 1 \notag
+\end{align}
+
+\end{document}
